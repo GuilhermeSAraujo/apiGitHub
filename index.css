@@ -9,7 +9,7 @@ body {
 
 .card {
     width: 350px;
-    background-color: #efefef;
+    background-color: #999999;
     border: none;
     cursor: pointer;
     transition: all 0.5s
@@ -79,7 +79,7 @@ hr .new1 {
 
 .join {
     font-size: 14px;
-    color: #a0a0a0;
+    color: #505050;
     font-weight: bold
 }
 

@@ -1,5 +1,3 @@
-// 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
-
 window.addEventListener("load", carregaInformacoesUsuario);
 
 async function carregaInformacoesUsuario() {
@@ -8,24 +6,22 @@ async function carregaInformacoesUsuario() {
 }
 
 function buscaInformacoesGitHub() {
-    return axios
-        .get("https://api.github.com/users/GuilhermeSAraujo")
-        .then((response) => {
-            let dadosResposta = response.data;
-            return {
-                usuario: dadosResposta.login,
-                avatarUrl: dadosResposta.avatar_url,
-                url: dadosResposta.html_url,
-                nome: dadosResposta.name,
-                empresa: dadosResposta.company,
-                localizacao: dadosResposta.location,
-                descricao: dadosResposta.bio,
-                dataCriacao: dadosResposta.created_at,
-                numeroSeguidores: dadosResposta.followers,
-                numeroSeguindo: dadosResposta.following,
-                numeroRepositoriosPublicos: dadosResposta.public_repos,
-            };
-        });
+    return axios.get("https://api.github.com/users/GuilhermeSAraujo").then((response) => {
+        let dadosResposta = response.data;
+        return {
+            usuario: dadosResposta.login,
+            avatarUrl: dadosResposta.avatar_url,
+            url: dadosResposta.html_url,
+            nome: dadosResposta.name,
+            empresa: dadosResposta.company,
+            localizacao: dadosResposta.location,
+            descricao: dadosResposta.bio,
+            dataCriacao: dadosResposta.created_at,
+            numeroSeguidores: dadosResposta.followers,
+            numeroSeguindo: dadosResposta.following,
+            numeroRepositoriosPublicos: dadosResposta.public_repos,
+        };
+    });
 }
 
 function carregaInformacoesNaTela(dadosPerfil) {
@@ -39,7 +35,9 @@ function carregaInformacoesNaTela(dadosPerfil) {
     campos.descricao.textContent = dadosPerfil.descricao;
     campos.empresa.appendChild(document.createTextNode(dadosPerfil.empresa));
     campos.localizacao.appendChild(document.createTextNode(dadosPerfil.localizacao));
-    campos.numeroRepositoriosPublicos.appendChild(document.createTextNode(dadosPerfil.numeroRepositoriosPublicos));
+    campos.numeroRepositoriosPublicos.appendChild(
+        document.createTextNode(dadosPerfil.numeroRepositoriosPublicos)
+    );
     campos.dataCriacao.appendChild(document.createTextNode(formataData(dadosPerfil.dataCriacao)));
 }
 
@@ -59,7 +57,7 @@ function buscaCamposHtml() {
     };
 }
 
-function formataData(dataParam){
+function formataData(dataParam) {
     let data = new Date(dataParam);
     return data.toLocaleDateString("pt-BR");
 }
