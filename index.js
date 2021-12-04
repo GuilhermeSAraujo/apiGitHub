@@ -83,6 +83,7 @@ function buscaResultadosGitHub(palavrasPesquisa) {
 function mostraModal(dados) {
 	preencheDadosBusca(dados);
 	modal.style.display = "block";
+	console.log(modal)
 }
 
 function preencheDadosBusca(dados) {
@@ -91,7 +92,6 @@ function preencheDadosBusca(dados) {
 	let infoUsuarios = dados.items;
 	infoUsuarios.forEach((usuario, index) => {
 		if (index < 6) {
-			console.log(usuario);
 			let card = document.createElement("div");
 			card.className = "card";
 			card.style.width = "10.5rem";
@@ -121,11 +121,14 @@ function preencheDadosBusca(dados) {
 			} else {
 				colunaDireita.appendChild(card);
 			}
-			console.log(colunaEsquerda);
 		}
 	});
 }
 
 function fechaModal() {
 	modal.style.display = "none";
+	let colunaEsquerda = document.getElementById("colunaEsquerda");
+	let colunaDireita = document.getElementById("colunaDireita");
+	colunaEsquerda.innerHTML = "";
+	colunaDireita.innerHTML = "";
 }

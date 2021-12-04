@@ -6,13 +6,14 @@
          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="./index.css" rel="stylesheet">
-      <title>Login</title>
+      <link rel="icon" type="image/x-icon" href="githubIcon.png">
+      <title>GitHub Infos</title>
    </head>
    <body id="body">
       <nav class="navbar navbar-light bg-light">
          <div class="container-fluid">
             <form class="d-flex">
-				<label>Buscar usuário</label>
+               <label>Buscar usuário</label>
                <input id="barraDePesquisa" class="form-control me-2" type="search" placeholder="Username" aria-label="Search">
                <button id="pesquisar" class="btn btn-outline-success">Pesquisar</button>
             </form>
@@ -68,25 +69,26 @@
             </div>
          </div>
       </div>
-
-      <div id="modal" class="modal" tabindex="-1" role="dialog">
-         <div class="modal-dialog" role="document">
+      <div id="modal" class="modal" tabindex="-1" role="dialog" tabindex="-1" role="dialog" aria>
+         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                <div class="modal-header">
-                  <h5 class="modal-title"></h5>
+                  <h5 class="modal-title">Usuários encontrados</h5>
                   <button id="fecharModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
                </div>
-               <div class="container">
-				<div class="row">
-				  <div id="colunaEsquerda" class="col"></div>
-				  <div id="colunaDireita" class="col"></div>
-				</div>
+               <div class="modal-body">
+                  <div class="container">
+                     <div class="row">
+                        <div id="colunaEsquerda" class="col"></div>
+                        <div id="colunaDireita" class="col"></div>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
-
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="./index.js"></script>
    </body>
